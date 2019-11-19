@@ -2,12 +2,12 @@ import { connect } from 'react-redux'
 import { setVisibilityFilter } from '../actions'
 import Link from '../components/Link'
 
-// [맵] 프로퍼티에 상태값 적용
+// [맵] 상태값 적용
 const mapStateToProps = (state, ownProps) => ({
     active: ownProps.filter === state.visibilityFilter
 })
 
-// [맵] 프로퍼티에 상태값 적용
+// [맵] 디스패치 적용
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClick: () => dispatch(setVisibilityFilter(ownProps.filter))
 })

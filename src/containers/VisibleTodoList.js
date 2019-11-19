@@ -17,12 +17,12 @@ const getVisibleTodos = (todos, filter) => {
     }
 }
 
-// [맵] 프로퍼티에 상태값 적용
+// [맵] 상태값 적용
 const mapStateToProps = state => ({
     todos: getVisibleTodos(state.todos, state.visibilityFilter)
 })
 
-// [맵] 프로퍼티에 상태값 적용
+// [맵] 디스패치 적용
 const mapDispatchToProps = dispatch => ({
     toggleTodo: id => dispatch(toggleTodo(id))
 })
