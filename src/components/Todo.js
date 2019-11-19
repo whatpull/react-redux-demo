@@ -1,5 +1,5 @@
 import React from 'react';
-import ProtoTypes from 'proto-types';
+import PropTypes from 'prop-types';
 
 // [함수형 컴포넌트] 할 일
 const Todo = ({ onClick, completed, text }) => (
@@ -14,10 +14,10 @@ const Todo = ({ onClick, completed, text }) => (
 );
 
 // [프로퍼티] 유형체크
-Todo.protoTypes = {
-    onClick: ProtoTypes.func.isRequired,
-    completed: ProtoTypes.bool.isRequired,
-    text: ProtoTypes.string.isRequired
+Todo.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    completed: PropTypes.bool.isRequired,
+    text: PropTypes.string.isRequired
 }
 
 export default Todo

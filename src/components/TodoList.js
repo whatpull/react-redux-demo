@@ -1,27 +1,27 @@
 import React from 'react';
-import ProtoTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Todo from './Todo';
 
 // [함수형 컴포넌트] 할 일 리스트
-const TodoList = ({ todos, onTodoClick }) => (
+const TodoList = ({ todos, toggleTodo }) => (
     <ul>
-        {todos.map((todo, index) => {
+        {todos.map(todo => (
             // {...todo} : 전달방식 확인
-            <Todo key={index} {...todo} onClick={() => onTodoClick(index)} />
-        })}
+            <Todo key={todo.id} {...todo} onClick={() => toggleTodo(todo.id)} />
+        ))}
     </ul>
 );
 
 // [프로퍼티] 유형체크
-TodoList.protoTypes = {
-    todos: ProtoTypes.arrayOf(
-        ProtoTypes.shape({
-            id: ProtoTypes.number.isRequired,
-            completed: ProtoTypes.bool.isRequired,
-            text: ProtoTypes.string.isRequired
+TodoList.propTypes = {
+    todos: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            completed: PropTypes.bool.isRequired,
+            text: PropTypes.string.isRequired
         }).isRequired
     ).isRequired,
-    onTodoClick: ProtoTypes.func.isRequired
+    toggleTodo: PropTypes.func.isRequired
 }
 
 export default TodoList;
